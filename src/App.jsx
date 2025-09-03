@@ -4,7 +4,7 @@ import HomePage from './assets/pages/Home.jsx'
 import AboutPage from './assets/pages/About.jsx'
 
 import { Router } from './Router.jsx'
-import { Component } from 'react'
+import SearchPage from './assets/pages/Search.jsx'
 
 
 const appRoutes = [
@@ -17,8 +17,8 @@ const appRoutes = [
     Component: AboutPage 
   },
   {
-    path: '/twitch',
-    Component: () => <h1>Twitch</h1>
+    path: '/search/:query',
+    Component: SearchPage
   }
 ]
 
