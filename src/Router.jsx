@@ -29,7 +29,11 @@ export function Router({ children, routes  = [], defaultComponent: DefaultCompon
     return isRoute ? props : null
   })
 
-  const routesToUse = routes.concat(routesFromChildren )
+  const routesToUse = routes.concat(routesFromChildren ).filter(Boolean)
+
+  // buscamos la ruta que coincida con la URL actual
+  // si la ruta es dinamica, extraemos los parametros
+  // y los pasamos al componente como props
 
   const Page = routesToUse.find(({path}) => {
     if(path === currentPath) return true
